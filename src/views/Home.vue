@@ -1,18 +1,33 @@
 <template>
+<div>
+  <Header/>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Welcome to League of Poros</h1>
+    <img src="../assets/gifs/poro.gif">
+    <h2 @click="goToChampions">See al champs</h2>
   </div>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Header from '@/components/Header.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Header
+  },
+  methods: {
+    goToChampions(){
+      this.$router.push({ path: '/champions' })
+    }
   }
 }
 </script>
+
+<style scoped>
+h2{
+  cursor: pointer;
+}
+</style>
