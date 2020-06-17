@@ -11,3 +11,14 @@ ul{
     margin: 0;
     padding: 0;
 }
+
+.position-nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.position{
+    background-color: #b9b9f2;
+    border-radius: 15px;
+    width: 100px;
+}
