@@ -10,24 +10,49 @@ const jungle = ['Amumu', 'Dr Mundo', 'Ekko', 'Elise', 'Evelynn', 'Fiddlesticks',
 const support = ['Alistar', 'Bardo', 'Blitzcrank', 'Brand', 'Braum', 'Fiddlesticks', 'Galio', 'Janna', 'Karma', 'Leona', 'Lulu', 'Lux', 'Malphite', 'Maokai', 'Morgana', 'Nami', 'Nautilus', 'Pantheon', 'Poppy', 'Pyke', 'Rakan', 'Senna', 'Sett', 'Shaco', 'Shen', 'Sona', 'Soraka', 'Swain', 'Tahm Kench', 'Taric', 'Thresh', "Vel'Koz", 'Xerath', 'Yuumi', 'Zilean', 'Zyra']
 const adc = ['Aphelios', 'Ashe', 'Caitlyn', 'Cassiopeia', 'Draven', 'Ezreal', 'Jhin', 'Jinx', "Kai'Sa", 'Kalista', "Kog'Maw", 'Lucian', 'Miss Fortune', 'Sivir', 'Tristana', 'Twitch', 'Varus', 'Vayne', 'Xayah']
 
-
-async function getTopChampions(){
-    let topChampions = []
+async function getPositionChampions(position){
+    let champions = []
     const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.12.1/data/en_US/champion.json')
-    let champions = response.data.data
-    let championsArray = Object.values(champions)
+    let championsResp = response.data.data
+    let championsArray = Object.values(championsResp)
 
-    championsArray.forEach(champ => {
-        if(top.includes(champ.name)){
-            topChampions.push(champ)
-        }
-    })
-    console.log(topChampions)
-    return topChampions
+    if(position == 'mid'){
+        championsArray.forEach(champ => {
+            if(mid.includes(champ.name)){
+                champions.push(champ)
+            }
+        })
+    }else if(position == 'jungle'){
+        championsArray.forEach(champ => {
+            if(jungle.includes(champ.name)){
+                champions.push(champ)
+            }
+        })
+    }else if(position == 'support'){
+        championsArray.forEach(champ => {
+            if(support.includes(champ.name)){
+                champions.push(champ)
+            }
+        })
+    }else if(position == 'adc'){
+        championsArray.forEach(champ => {
+            if(adc.includes(champ.name)){
+                champions.push(champ)
+            }
+        })
+    }else if(position == 'top'){
+        championsArray.forEach(champ => {
+            if(top.includes(champ.name)){
+                champions.push(champ)
+            }
+        })
+    }
+    return champions
 }
+
 
 export {
     getAllChampions,
-    getTopChampions
+    getPositionChampions
 }
 
