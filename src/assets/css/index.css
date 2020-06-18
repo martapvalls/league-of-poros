@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
 
-body{
+*{
     font-family: 'Nunito', sans-serif;
-    margin: 0 auto;
-    background-color: #d7e4fa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e1e6eb;
+    text-align: center;
 }
 
 ul{
@@ -18,7 +26,13 @@ ul{
 }
 
 .position{
-    background-color: #b9b9f2;
+    background-color: #737679;
+    color: white;
     border-radius: 15px;
     width: 100px;
+}
+
+.dark{
+    background: #192734;
+    color: white;
 }

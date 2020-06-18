@@ -35,7 +35,7 @@ export default {
     justify-content: center;
 }
 .champion{
-    background-color: #b9b9f2;
+    background-color: #b4b4c9;
     border-radius: 15px;
     margin: 2px;
 }
@@ -54,6 +54,10 @@ export default {
     flex-direction: column;
     justify-content: center;
     width: 50%;
+}
+
+.dark .champion{
+    background-color: #36363b;
 }
 
 @media (min-width: 500px) {

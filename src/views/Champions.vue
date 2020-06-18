@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header/>
         <div class="position-nav">
             <p class="position" @click="retrieveChampions">ALL</p>
             <p class="position" @click="retrievePositionChampions('top')">TOP</p>

@@ -1,6 +1,5 @@
 <template>
 <div>
-  <Header/>
   <div class="home">
     <h1>Welcome to League of Poros</h1>
     <img src="../assets/gifs/poro.gif">
