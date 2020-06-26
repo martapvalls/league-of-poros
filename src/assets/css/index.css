@@ -23,6 +23,11 @@ ul{
 .position-nav{
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+
+.champions{
+    padding: 20px 100px
 }
 
 .position{

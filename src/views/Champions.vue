@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="champions">
         <div class="position-nav">
             <p class="position" @click="retrieveChampions">ALL</p>
             <p class="position" @click="retrievePositionChampions('top')">TOP</p>
@@ -9,7 +9,7 @@
             <p class="position" @click="retrievePositionChampions('adc')">ADC</p>
         </div>
         <Loading v-if="isLoading"/>
-        <SingleChampion :champions="champions"/>     
+        <SingleChampion :champions="champions" @go-to-detail-champion="goToDetailChampion"/>     
     </div>
 </template>
 
@@ -48,6 +48,9 @@ export default {
             }).finally(() => {
                 this.isLoading = false
             })
+        },
+        goToDetailChampion($event){
+            this.$router.push({ path: `/champion/${$event}` })
         }
     },
     created(){

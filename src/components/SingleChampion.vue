@@ -2,7 +2,7 @@
     <div class="body">
 
         <ul v-if="champions != null" class="champions-list">
-            <li v-for="c in champions" :key="c.key" class="champion">
+            <li v-for="c in champions" :key="c.key" class="champion" @click="$emit('go-to-detail-champion', c.name)">
                  <span class="champion-name">{{c.name}}</span>
                 <div class="champion-title">
                    

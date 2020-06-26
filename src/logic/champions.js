@@ -12,7 +12,7 @@ const adc = ['Aphelios', 'Ashe', 'Caitlyn', 'Cassiopeia', 'Draven', 'Ezreal', 'J
 
 async function getPositionChampions(position){
     let champions = []
-    const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.12.1/data/en_US/champion.json')
+    const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion.json')
     let championsResp = response.data.data
     let championsArray = Object.values(championsResp)
 
@@ -50,9 +50,13 @@ async function getPositionChampions(position){
     return champions
 }
 
+function getSingleChampion(champion){
+    return axios.get(`http://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion/${champion}.json`)
+}
 
 export {
     getAllChampions,
-    getPositionChampions
+    getPositionChampions,
+    getSingleChampion
 }
 

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Champions from '../views/Champions.vue'
+import ChampionDetail from '../views/ChampionDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ Vue.use(VueRouter)
     name: 'Champions',
     component: Champions
   },
+  {
+    path: '/champion/:name',
+    name: 'ChampionDetail',
+    component: ChampionDetail
+  }
 ]
 
 const router = new VueRouter({
