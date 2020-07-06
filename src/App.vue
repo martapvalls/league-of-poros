@@ -2,11 +2,13 @@
   <div class="app" :class="mode">
     <Header :mode="mode" @changeMode="changeMode"/>
     <router-view/>
+    <Footer style="position: fixed; bottom: 0; width: 100%;"/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 export default {
   name: 'app',
   data(){
@@ -15,7 +17,7 @@ export default {
     }
   },
   components: {
-    Header
+    Header, Footer
   },
   methods:{
     changeMode(){

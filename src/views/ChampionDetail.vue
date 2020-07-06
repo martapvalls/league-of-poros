@@ -13,7 +13,7 @@
             <div class="spells">
                 <div  v-for="spell in champion.spells" alt="champion spells" :key="spell.id"  >
                     <div @click="showSpellDetail(spell)" class="spell-container">
-                        <img :src="'http://ddragon.leagueoflegends.com/cdn/8.24.1/img/spell/' + spell.image.full">
+                        <img :src="'https://ddragon.leagueoflegends.com/cdn/10.13.1/img/spell/' + spell.image.full">
                         <p> {{spell.name}} </p>
                     </div>  
                 </div>
@@ -25,6 +25,15 @@
                 <p>Cost: {{spell.costBurn}} </p>
                 <br>
                 <p>Cooldown: {{spell.cooldownBurn}} </p>
+            </div>
+            <br>
+            <div class="spell-detail">
+                <h2>Passive: {{champion.passive.name}}  </h2>
+                <br>
+                <div class="passive-detail">
+                    <img :src="'http://ddragon.leagueoflegends.com/cdn/10.13.1/img/passive/' + champion.passive.image.full">
+                    <p> {{champion.passive.description}} </p>
+                </div>
             </div>
         </div>
     </div>
@@ -73,5 +82,5 @@ export default {
 .spells{display: flex; justify-content: space-evenly;}
 .spell-container{min-width: 120px; cursor: pointer;}
 .spell-detail{padding: 0 20px;}
-
+.passive-detail{display: flex;}
 </style>
