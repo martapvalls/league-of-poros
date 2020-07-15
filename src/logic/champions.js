@@ -54,19 +54,21 @@ function getSingleChampion(champion){
     return axios.get(`http://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion/${champion}.json`)
 }
 
+
 async function searchChampion(query){
     let champions = []
     const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion.json')
     let championsResp = response.data.data
     let championsArray = Object.values(championsResp)
-    console.log(query)
+
     championsArray.forEach(champ => {
-        if((champ.name).includes(query)){
+        let champName = champ.name
+
+        if(champName.toLowerCase().includes(query.toLowerCase())){
             champions.push(champ)
         }
     })
     
-    console.log(champions)
     return champions
 }
 
