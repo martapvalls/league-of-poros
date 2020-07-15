@@ -24,7 +24,6 @@ import {getAllChampions, getPositionChampions, searchChampion} from '../logic/ch
 export default {
     name: 'Champions',
     components: {
-        Header,
         SingleChampion,
         Loading,
         Search
