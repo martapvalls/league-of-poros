@@ -1,6 +1,6 @@
 <template>
     <div v-if="champion != null" class="champion-container">
-        <h2 class="champion-name"> {{champion.name}}</h2>
+        <h2 class="champion-name"> {{champion.name}}</h2>   <span style="cursor: pointer" @click="onBack">Back</span>
         <h3 class="champion-title">{{champion.title}}</h3>
         <div>
             <img :src="'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.name + '_0.jpg'" alt="champion image">
@@ -59,6 +59,9 @@ export default {
         },
         showSpellDetail(spell){
             this.spell = spell
+        },
+        onBack(){
+            this.$router.push({ path: `/champions` })
         }
     },
     created(){

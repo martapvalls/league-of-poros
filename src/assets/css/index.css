@@ -41,3 +41,11 @@ ul{
     background: #192734;
     color: white;
 }
+
+.dark button{
+    color: white;
+}
+
+img{
+    border-radius: 15px;
+}

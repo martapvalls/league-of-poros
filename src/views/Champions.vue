@@ -7,6 +7,7 @@
             <p class="position" @click="retrievePositionChampions('mid')">MID</p>
             <p class="position" @click="retrievePositionChampions('support')">SUPPORT</p>
             <p class="position" @click="retrievePositionChampions('adc')">ADC</p>
+            <Search @click="searchChampion"/>
         </div>
         <Loading v-if="isLoading"/>
         <SingleChampion :champions="champions" @go-to-detail-champion="goToDetailChampion"/>     
@@ -16,15 +17,17 @@
 <script>
 import Header from '@/components/Header.vue'
 import SingleChampion from '@/components/SingleChampion.vue'
+import Search from '@/components/Search.vue'
 import Loading from '@/components/Loading.vue'
-import {getAllChampions, getPositionChampions} from '../logic/champions.js'
+import {getAllChampions, getPositionChampions, searchChampion} from '../logic/champions.js'
 
 export default {
     name: 'Champions',
     components: {
         Header,
         SingleChampion,
-        Loading
+        Loading,
+        Search
     },
     data(){
         return {
@@ -51,6 +54,15 @@ export default {
         },
         goToDetailChampion($event){
             this.$router.push({ path: `/champion/${$event}` })
+        },
+        searchChampion($event){
+
+            this.isLoading = true
+            searchChampion($event).then(response => { 
+                this.champions = response
+            }).finally(() => {
+                this.isLoading = false
+            })
         }
     },
     created(){

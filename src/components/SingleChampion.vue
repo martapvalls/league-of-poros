@@ -38,6 +38,7 @@ export default {
     background-color: #b4b4c9;
     border-radius: 15px;
     margin: 2px;
+    cursor: pointer;
 }
 .champion-name{
     width: 100%;
