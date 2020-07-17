@@ -13,7 +13,7 @@
             <div class="spells">
                 <div  v-for="spell in champion.spells" alt="champion spells" :key="spell.id"  >
                     <div @click="showSpellDetail(spell)" class="spell-container">
-                        <img :src="'https://ddragon.leagueoflegends.com/cdn/10.13.1/img/spell/' + spell.image.full">
+                        <img class="spell-img" :src="'https://ddragon.leagueoflegends.com/cdn/10.13.1/img/spell/' + spell.image.full">
                         <p> {{spell.name}} </p>
                     </div>  
                 </div>
@@ -31,7 +31,7 @@
                 <h2>Passive: {{champion.passive.name}}  </h2>
                 <br>
                 <div class="passive-detail">
-                    <img :src="'http://ddragon.leagueoflegends.com/cdn/10.13.1/img/passive/' + champion.passive.image.full">
+                    <img class="passive-img" :src="'http://ddragon.leagueoflegends.com/cdn/10.13.1/img/passive/' + champion.passive.image.full">
                     <p> {{champion.passive.description}} </p>
                 </div>
             </div>
@@ -86,4 +86,6 @@ export default {
 .spell-container{min-width: 120px; cursor: pointer;}
 .spell-detail{padding: 0 20px;}
 .passive-detail{display: flex;}
+.spell-img{width: 60px;}
+.passive-img{width: 60px; height: 60px; margin-right: 5px;}
 </style>

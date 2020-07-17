@@ -1,8 +1,16 @@
 # League of Poros
 
-This project is created to improve my skills with VueJS. 
+![landing](/src/assets/img/league-of-poros.png)
 
-This is a web application about the game League of Legens, it allows you to see all the champions that can be used in the game, as well as the detail of each one (skills, history, skins, ...)
+![landing](/src/assets/img/league-of-poros2.png)
+
+## Introduction
+
+Project created to improve my skills with VueJS. 
+
+This is a web application about the game League of Legens, it allows you to see all the champions that can be used in the game, as well as the detail of each one (skills, history...)
+
+You can run the demo here
 
 ## Project setup
 ```
@@ -18,6 +26,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

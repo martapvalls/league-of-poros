@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" placeholder="Search your champion" v-model="query">
+        <input type="text" placeholder="Search your champion" v-model="query" v-on:keyup.enter="searchChampion">
         <button @click="searchChampion"><i class="fa fa-search" ></i></button>
     </div>
 </template>
