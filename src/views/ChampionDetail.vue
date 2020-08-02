@@ -13,7 +13,7 @@
             <div class="spells">
                 <div  v-for="spell in champion.spells" alt="champion spells" :key="spell.id"  >
                     <div @click="showSpellDetail(spell)" class="spell-container">
-                        <img class="spell-img" :src="'https://ddragon.leagueoflegends.com/cdn/10.13.1/img/spell/' + spell.image.full">
+                        <img class="spell-img" :src="'https://ddragon.leagueoflegends.com/cdn/'+ jsonVersion + '/img/spell/' + spell.image.full">
                         <p> {{spell.name}} </p>
                     </div>  
                 </div>
@@ -31,7 +31,7 @@
                 <h2>Passive: {{champion.passive.name}}  </h2>
                 <br>
                 <div class="passive-detail">
-                    <img class="passive-img" :src="'http://ddragon.leagueoflegends.com/cdn/10.13.1/img/passive/' + champion.passive.image.full">
+                    <img class="passive-img" :src="'http://ddragon.leagueoflegends.com/cdn/'+ jsonVersion + '/img/passive/' + champion.passive.image.full">
                     <p> {{champion.passive.description}} </p>
                 </div>
             </div>
@@ -42,12 +42,14 @@
 <script>
 import {getSingleChampion} from '../logic/champions.js'
 
+
 export default {
     name: 'ChampionDetail',
     data(){
         return{
             champion: null,
-            spell: null
+            spell: null,
+            jsonVersion: '10.15.1'
         }
     },
     methods:{

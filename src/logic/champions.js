@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const jsonVersion = '10.15.1'
+
 function getAllChampions(){
-    return axios.get('https://ddragon.leagueoflegends.com/cdn/10.12.1/data/en_US/champion.json')
+    return axios.get('https://ddragon.leagueoflegends.com/cdn/' + jsonVersion + '/data/en_US/champion.json')
 }
 
 const top = ['Aatrox', 'Akali', 'Camille', 'Cassiopeia', "Cho'Gath", 'Darius', 'Dr Mundo', 'Fiora', 'Gangplank', 'Garen', 'Gnar', 'Heimerdinger', 'Illaoi', 'Irelia', 'Jax', 'Jayce', 'Kayle', 'Kennen', 'Kled', 'Malphite', 'Maokai', 'Mordekaiser', 'Nasus', 'Olaf', 'Ornn', 'Pantheon', 'Poppy', 'Quinn', 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze', 'Sett', 'Shen', 'Shyvana', 'Singed', 'Sion', 'Teemo', 'Tryndamere', 'Urgot', 'Vladimir', 'Volibear', 'Wukong', 'Yasuo', 'Yorick']
@@ -12,7 +14,7 @@ const adc = ['Aphelios', 'Ashe', 'Caitlyn', 'Cassiopeia', 'Draven', 'Ezreal', 'J
 
 async function getPositionChampions(position){
     let champions = []
-    const response = await axios.get('https://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion.json')
+    const response = await axios.get('https://ddragon.leagueoflegends.com/cdn/' + jsonVersion + '/data/en_US/champion.json')
     let championsResp = response.data.data
     let championsArray = Object.values(championsResp)
 
@@ -51,13 +53,13 @@ async function getPositionChampions(position){
 }
 
 function getSingleChampion(champion){
-    return axios.get(`https://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion/${champion}.json`)
+    return axios.get(`https://ddragon.leagueoflegends.com/cdn/${jsonVersion}/data/en_US/champion/${champion}.json`)
 }
 
 
 async function searchChampion(query){
     let champions = []
-    const response = await axios.get('https://ddragon.leagueoflegends.com/cdn/10.13.1/data/en_US/champion.json')
+    const response = await axios.get('https://ddragon.leagueoflegends.com/cdn/' + jsonVersion + '/data/en_US/champion.json')
     let championsResp = response.data.data
     let championsArray = Object.values(championsResp)
 
