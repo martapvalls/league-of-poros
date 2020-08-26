@@ -6,7 +6,7 @@
                  <span class="champion-name">{{c.name}}</span>
                 <div class="champion-title">
                    
-                    <img :src="'https://ddragon.leagueoflegends.com/cdn/10.15.1/img/champion/' + c.image.full " alt="">
+                    <img :src="`https://ddragon.leagueoflegends.com/cdn/${jsonVersion}/img/champion/${c.image.full}`" alt="">
                 </div>
                 <div class="champion-tags">
                     <li v-for="tag in c.tags"> {{tag}}</li>
@@ -19,7 +19,12 @@
 <script>
 export default {
     name: 'SingleChampion',
-    props: ['champions']
+    props: ['champions'],
+    data(){
+        return{
+            jsonVersion: '10.16.1'
+        }
+    }
 }
 </script>
 

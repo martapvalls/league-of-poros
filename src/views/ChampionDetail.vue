@@ -3,7 +3,7 @@
         <h2 class="champion-name"> {{champion.name}}</h2>   <span style="cursor: pointer" @click="onBack">Back</span>
         <h3 class="champion-title">{{champion.title}}</h3>
         <div>
-            <img :src="'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/' + champion.name + '_0.jpg'" alt="champion image">
+            <img :src="`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.name}_0.jpg`" alt="champion image">
         </div>
         <div class="champion-history">
             <p class="champion-lore">{{champion.lore}}</p>
@@ -13,7 +13,7 @@
             <div class="spells">
                 <div  v-for="spell in champion.spells" alt="champion spells" :key="spell.id"  >
                     <div @click="showSpellDetail(spell)" class="spell-container">
-                        <img class="spell-img" :src="'https://ddragon.leagueoflegends.com/cdn/'+ jsonVersion + '/img/spell/' + spell.image.full">
+                        <img class="spell-img" :src="`https://ddragon.leagueoflegends.com/cdn/${jsonVersion}/img/spell/${spell.image.full}`">
                         <p> {{spell.name}} </p>
                     </div>  
                 </div>
@@ -31,7 +31,7 @@
                 <h2>Passive: {{champion.passive.name}}  </h2>
                 <br>
                 <div class="passive-detail">
-                    <img class="passive-img" :src="'http://ddragon.leagueoflegends.com/cdn/'+ jsonVersion + '/img/passive/' + champion.passive.image.full">
+                    <img class="passive-img" :src="`http://ddragon.leagueoflegends.com/cdn/${jsonVersion}/img/passive/${champion.passive.image.full}`">
                     <p> {{champion.passive.description}} </p>
                 </div>
             </div>
@@ -49,7 +49,7 @@ export default {
         return{
             champion: null,
             spell: null,
-            jsonVersion: '10.15.1'
+            jsonVersion: '10.16.1'
         }
     },
     methods:{

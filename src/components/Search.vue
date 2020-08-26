@@ -6,7 +6,6 @@
 </template>
 
 <script>
-//import {searchChampion} from '../logic/champions.js'
 
 export default {
     name: 'Search',
