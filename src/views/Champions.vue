@@ -7,7 +7,7 @@
             <p class="position" @click="retrievePositionChampions('mid')">MID</p>
             <p class="position" @click="retrievePositionChampions('support')">SUPPORT</p>
             <p class="position" @click="retrievePositionChampions('adc')">ADC</p>
-            <Search @click="searchChampion"/>
+            <Search @click="searchChampion" :placeholder="placeholder"/>
         </div>
         <Loading v-if="isLoading"/>
         <SingleChampion :champions="champions" @go-to-detail-champion="goToDetailChampion"/>     
@@ -31,37 +31,46 @@ export default {
     data(){
         return {
             champions: null,
-            isLoading: false
+            isLoading: false,
+            placeholder: 'Search your champion'
         }
     },
     methods: {
-        retrieveChampions(){
+        async retrieveChampions(){
             this.isLoading = true
-            getAllChampions().then(response => { 
+            try{
+                const response = await getAllChampions()
                 this.champions = response.data.data
-            }).finally(() => {
+            }catch(error){
+                throw new Error(`Something failed`)
+            } finally {
                 this.isLoading = false
-            })
+            }
         },
-        retrievePositionChampions(position){
+        async retrievePositionChampions(position){
             this.isLoading = true
-            getPositionChampions(position).then(response => {
+            try{
+                const response = await getPositionChampions(position)
                 this.champions = response
-            }).finally(() => {
+            }catch(error){
+                throw new Error(`Something failed`)
+            } finally {
                 this.isLoading = false
-            })
+            }   
         },
         goToDetailChampion($event){
             this.$router.push({ path: `/champion/${$event}` })
         },
-        searchChampion($event){
-
+        async searchChampion($event){
             this.isLoading = true
-            searchChampion($event).then(response => { 
+            try{
+                const response = await searchChampion($event)
                 this.champions = response
-            }).finally(() => {
+            }catch(error){
+                throw new Error(`Something failed`)
+            }finally {
                 this.isLoading = false
-            })
+            }
         }
     },
     created(){

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Champions from '../views/Champions.vue'
 import ChampionDetail from '../views/ChampionDetail.vue'
+import Summoner from '../views/Summoner.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ Vue.use(VueRouter)
     path: '/champion/:name',
     name: 'ChampionDetail',
     component: ChampionDetail
+  },
+  {
+    path: '/summoner',
+    name: 'Summoner',
+    component: Summoner
   }
 ]
 

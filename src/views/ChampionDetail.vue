@@ -53,11 +53,14 @@ export default {
         }
     },
     methods:{
-        retrieveChampion(){
-            let champName = this.$route.params.name
-            getSingleChampion(champName).then(response => {
+        async retrieveChampion(){
+            try{
+                let champName = this.$route.params.name
+                const response = await getSingleChampion(champName)
                 this.champion = response.data.data[champName]
-            })
+            }catch(error){
+                throw new Error(`Something failed`)
+            }
         },
         showSpellDetail(spell){
             this.spell = spell
