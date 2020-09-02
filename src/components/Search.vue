@@ -1,7 +1,7 @@
 <template>
     <div>
-        <input type="text" :placeholder=placeholder v-model="query" v-on:keyup.enter="searchChampion">
-        <button @click="searchChampion"><i class="fa fa-search" ></i></button>
+        <input type="text" :placeholder=placeholder v-model="query" v-on:keyup.enter="searchQuery">
+        <button @click="searchQuery"><i class="fa fa-search" ></i></button>
     </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
       }
     },
     methods:{
-      searchChampion(query){
+      searchQuery(query){
           this.$emit("click", this.query)
       }
   } 

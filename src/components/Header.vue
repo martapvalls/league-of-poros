@@ -18,12 +18,8 @@ export default {
 
 <style scoped>
 
-.nav{
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-}
+.nav{padding: 10px; display: flex; justify-content: center}
 
-li{ list-style: none; padding: 0 5px; cursor: pointer;}
+li{list-style: none; padding: 0 5px; cursor: pointer}
 
 </style>

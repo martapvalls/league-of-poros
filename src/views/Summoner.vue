@@ -1,12 +1,17 @@
 <template>
     <div class="home">
         <h1>search for a summoner</h1>
-        <Search :placeholder='placeholder' style="width: 300px"/>
+        <Search @click="searchSummoner" :placeholder='placeholder' style="width: 300px"/>
+        <div v-if="summoner">
+            <h1> holiii </h1>
+
+        </div>
     </div>
 </template>
 
 <script>
 import Search from '@/components/Search.vue'
+import {mapActions, mapState} from 'vuex'
 
 export default {
     name: 'Summoner',
@@ -14,6 +19,16 @@ export default {
     data(){
         return{
             placeholder: 'Summoner Name'
+        }
+    },
+    computed:{
+        ...mapState(['summoner'])  
+    },
+    methods:{
+        ...mapActions(['getSummoner']),
+        searchSummoner($event){
+            this.getSummoner($event)
+            this.$router.push({ path: `/champion/${$event}` })
         }
     }
 }
