@@ -28,7 +28,7 @@ export default {
         ...mapActions(['getSummoner']),
         searchSummoner($event){
             this.getSummoner($event)
-            this.$router.push({ path: `/champion/${$event}` })
+            this.$router.push({ path: `/summoner/${$event}` })
         }
     }
 }

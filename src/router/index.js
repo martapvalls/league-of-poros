@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import {Home, Champions, ChampionDetail, Summoner} from '../views'
+import {Home, Champions, ChampionDetail, Summoner, SummonerDetail} from '../views'
 
 Vue.use(VueRouter)
 
@@ -24,6 +24,11 @@ Vue.use(VueRouter)
     path: '/summoner',
     name: 'Summoner',
     component: Summoner
+  },
+  {
+    path: '/summoner/:name',
+    name: 'SummonerDetail',
+    component: SummonerDetail
   }
 ]
 

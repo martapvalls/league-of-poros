@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const jsonVersion = '10.16.1'
+const jsonVersion = '10.18.1'
 
 const url = `https://ddragon.leagueoflegends.com/cdn/${jsonVersion}/data/en_US/champion.json`
 
