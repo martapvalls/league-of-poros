@@ -17,9 +17,13 @@ export default new Vuex.Store({
     },
     actions: {
         async getSummoner({commit}, summonerName){
-            const data = await axios.get(`https://skylabcoders.herokuapp.com/proxy?url=https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`)
-            const _summoner = data.data
-            commit('uploadSummoner', _summoner)
+            try{
+                const data = await axios.get(`https://skylabcoders.herokuapp.com/proxy?url=https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`)
+                const _summoner = data.data
+                commit('uploadSummoner', _summoner)
+            }catch(error){
+                throw error.message
+            }
         }
     }
 })
