@@ -49,7 +49,7 @@ export default {
         return{
             champion: null,
             spell: null,
-            jsonVersion: '10.18.1'
+            jsonVersion: '10.19.1'
         }
     },
     methods:{

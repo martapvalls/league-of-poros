@@ -22,7 +22,7 @@ export default {
     name: 'SummonerDetail',
     data(){
         return{
-            jsonVersion: '10.18.1'
+            jsonVersion: '10.19.1'
         }
     },
     computed:{

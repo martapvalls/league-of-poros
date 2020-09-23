@@ -22,7 +22,7 @@ export default {
     props: ['champions'],
     data(){
         return{
-            jsonVersion: '10.18.1'
+            jsonVersion: '10.19.1'
         }
     }
 }
