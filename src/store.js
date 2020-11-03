@@ -8,11 +8,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state:{
-        summoner: ''
+        summoner: '',
+        id: ''
     },
     mutations: {
         uploadSummoner(state, summonerAction){
             state.summoner = summonerAction
+            state.id = summonerAction.id
         }
     },
     actions: {
